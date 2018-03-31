@@ -16,11 +16,11 @@
       body {
         background: rgb(219, 219, 219);
       }
-      #slide {
-        width: 100vw;
-      }
       #slide-img {
-        width: 100vw;
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        margin: auto;
       }
     </style>
     <link rel="prefetch" href="img/Slide1.jpg"/>
@@ -32,9 +32,7 @@
     <link rel="prefetch" href="img/Slide7.jpg"/>
   </head>
   <body>
-    <div id="slide">
-      <img id="slide-img" src="img/Slide1.jpg">
-    </div>
+    <img id="slide-img" src="img/Slide1.jpg">
     <script src="app.js"></script>
   </body>
 </html>
