@@ -1,14 +1,17 @@
 "use strict";
 
 var page = 1
-const max = 7
+const max = 12
 const img = document.getElementById("slide-img")
+
+const pad = n => n.toString().padStart(2, "0")
 
 const next = (_) => {
   console.log("next: page", page)
   page++
   if (page > max) page = 1
-  img.src = "img/Slide" + page + ".jpg"
+  console.log("src", "img/Slide" + pad(page) + ".jpg")
+  img.src = "img/Slide" + pad(page) + ".jpg"
 }
 
 document.body.addEventListener("click", next)
