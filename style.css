@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: rgb(219, 219, 219);
+}
+
+#slide {
+  position: relative;
+}
+
+#slide-img {
+  max-width: 100vw;
+  max-height: 100vh;
+  display: block;
+  margin: auto;
+}
+
+#guides {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-flow: row;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.guide {
+  flex: 1;
+}
+
+.show {
+  cursor: pointer;
+}
+
+.hide {
+  cursor: none;
+}
+
+.show path {
+  stroke: rgba(238, 159, 159, 0.3);
+}
+
+.hide path {
+  stroke: none;
+}
+
+body:after {
+  content: url(img/Slide01.jpg) url(img/Slide02.jpg) url(img/Slide03.jpg) 
+           url(img/Slide04.jpg) url(img/Slide05.jpg) url(img/Slide06.jpg) 
+           url(img/Slide07.jpg) url(img/Slide08.jpg) url(img/Slide09.jpg) 
+           url(img/Slide10.jpg) url(img/Slide11.jpg) url(img/Slide12.jpg);
+  display: none;
+}

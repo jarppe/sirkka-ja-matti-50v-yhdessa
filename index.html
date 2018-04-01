@@ -3,36 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <title>Sirkka ja Matti - Yhdessä 50 vuotta</title>
-    <style>
-      * {
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-      }
-      html, body {
-        width: 100%;
-        height: 100%;
-      }
-      body {
-        background: rgb(219, 219, 219);
-      }
-      #slide-img {
-        max-width: 100vw;
-        max-height: 100vh;
-        display: block;
-        margin: auto;
-      }
-      body:after {
-        content: url(img/Slide01.jpg) url(img/Slide02.jpg) url(img/Slide03.jpg) 
-                 url(img/Slide04.jpg) url(img/Slide05.jpg) url(img/Slide06.jpg) 
-                 url(img/Slide07.jpg) url(img/Slide08.jpg) url(img/Slide09.jpg) 
-                 url(img/Slide10.jpg) url(img/Slide11.jpg) url(img/Slide12.jpg);
-        display: none;
-      }
-    </style>
+    <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <img id="slide-img" src="img/Slide01.jpg">
+    <div id="slide">
+      <div id="guides" class="hide">
+        <div id="back" class="guide">
+          <svg width="100%" height="100%" viewBox="0 0 100 100">
+            <path stroke-width=20
+                  fill="none"
+                  d="M 70 20 L 35 50 L 70 80"/>
+          </svg>
+        </div>
+        <div id="forward" class="guide">
+          <svg width="100%" height="100%" viewBox="0 0 100 100">
+            <path stroke-width=20
+                  fill="none"
+                  d="M 30 20 L 65 50 L 30 80"/>
+          </svg>
+        </div>
+      </div>
+      <img id="slide-img" src="img/Slide01.jpg">
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
