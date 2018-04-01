@@ -1,7 +1,7 @@
 "use strict";
 
 console.log("This is just a slide show for my parents on their 50th anniversary.")
-console.log("See https://github.com/jarppe/sirkka-ja-matti-50v-yhdessa")
+console.log("See https://github.com/jarppe/sirkka-ja-matti-50v-yhdessa for code.")
 
 const byId = id => document.getElementById(id)
 
@@ -10,17 +10,23 @@ const max = 12
 
 const pad = n => n.toString().padStart(2, "0")
 
+const showPage = pageNum => byId("slide-img").src = "img/Slide" + pad(pageNum) + ".jpg"
+
 const next = direction => {
   return () => {
     page += direction;
     if (page <= 0) page = max
     if (page > max) page = 1
-    byId("slide-img").src = "img/Slide" + pad(page) + ".jpg"
+    showPage(page)
   }
 }
 
 const goForward = next(+1)
 const goBack = next(-1)
+const goStart = () => {
+  page = 1;
+  showPage(page)
+}
 
 byId("forward").addEventListener("click", goForward)
 byId("back").addEventListener("click", goBack)
@@ -29,7 +35,8 @@ const keyCodes = {
   "ArrowLeft": goBack,
   "ArrowRight": goForward,
   "Space": goForward,
-  "Enter": goForward
+  "Enter": goForward,
+  "Escape": goStart
 }
 
 document.addEventListener("keydown", e => {
